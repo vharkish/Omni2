@@ -1,5 +1,3 @@
-code
-Html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,170 +5,194 @@ Html
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reena Sells Homes | Seattle Luxury Real Estate</title>
     
-    <!-- STABLE EXTERNAL ASSETS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        h1, h2 { font-family: 'Playfair Display', serif; }
-        /* Hero Background - High Stability Link */
-        .hero-gradient { 
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop'); 
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        
+        /* LUXURY DARK HERO - Modern Seattle Aesthetic */
+        .hero-section { 
+            background: linear-gradient(rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.5)), 
+                        url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1920&auto=format&fit=crop'); 
             background-size: cover; 
             background-position: center; 
+            background-attachment: fixed;
         }
-        .logo-text { color: #0f172a; font-weight: 800; line-height: 0.9; }
-        .logo-seattle { color: #059669; font-size: 10px; letter-spacing: 0.2em; font-weight: 700; }
+
+        .btn-outline { border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s ease; }
+        .btn-outline:hover { background: white; color: #0f172a; border-color: white; }
+        
+        .footer-link { color: #94a3b8; transition: color 0.3s; }
+        .footer-link:hover { color: white; }
     </style>
 </head>
-<body class="bg-white">
+<body class="bg-white text-slate-900">
 
-    <!-- HEADER -->
-    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 py-3 px-6 flex justify-between items-center">
-        <!-- CUSTOM LOGO (SVG - WILL NEVER BREAK) -->
-        <a href="#" class="flex items-center gap-3">
-            <svg width="38" height="38" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 45L50 20L80 45V80H20V45Z" stroke="#0f172a" stroke-width="5" stroke-linejoin="round"/>
-                <path d="M50 20V80M40 30H60" stroke="#059669" stroke-width="4" stroke-linecap="round"/>
-                <circle cx="50" cy="12" r="3" fill="#059669"/>
-            </svg>
-            <div>
-                <div class="logo-text text-lg uppercase tracking-tighter">REENA <span class="font-light">SELLS</span></div>
-                <div class="logo-text text-lg uppercase tracking-tighter -mt-1">HOMES</div>
-                <div class="logo-seattle uppercase tracking-widest">Seattle • WA</div>
+    <!-- NAVIGATION (REXMON STYLE) -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 py-4 px-8 flex justify-between items-center">
+        <a href="#" class="flex items-center gap-4">
+            <div class="flex flex-col">
+                <span class="text-2xl font-bold tracking-tighter text-slate-900 leading-none">REENA <span class="font-light italic">Sells Homes</span></span>
+                <span class="text-[10px] tracking-[0.4em] text-emerald-600 font-bold uppercase mt-1">Seattle • Washington</span>
             </div>
         </a>
 
-        <!-- NAV LINKS -->
-        <div class="hidden lg:flex space-x-10 font-bold text-[10px] text-slate-400 uppercase tracking-[0.2em]">
+        <div class="hidden lg:flex space-x-10 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">
             <a href="#listings" class="hover:text-black transition">Listings</a>
             <a href="#contact" class="hover:text-black transition">Sell Your Home</a>
             <a href="#report" class="hover:text-black transition">Market Insights</a>
         </div>
-        
-        <!-- PHONE CALL-TO-ACTION -->
-        <div class="flex flex-col items-end">
-            <a href="tel:2068599528" class="bg-slate-900 text-white px-5 py-2.5 rounded-sm text-[10px] font-bold hover:bg-emerald-700 transition uppercase tracking-widest shadow-lg">
-                Call Reena
+
+        <div class="flex items-center gap-6">
+            <div class="hidden md:flex flex-col text-right">
+                <span class="text-[10px] text-slate-400 uppercase font-bold tracking-widest">Inquiries</span>
+                <a href="tel:2068599528" class="text-sm font-bold text-slate-900">206.859.9528</a>
+            </div>
+            <a href="#contact" class="bg-slate-900 text-white px-6 py-3 rounded-sm text-[10px] font-bold hover:bg-emerald-700 transition uppercase tracking-widest shadow-xl">
+                Consultation
             </a>
-            <span class="text-[10px] text-slate-500 mt-1 font-bold tracking-tight">206.859.9528</span>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <header class="hero-gradient h-[75vh] flex items-center justify-center text-white text-center px-4">
-        <div class="max-w-4xl">
-            <span class="uppercase tracking-[0.5em] text-[10px] mb-6 block opacity-80 font-bold">Seattle Washington Real Estate</span>
-            <h1 class="text-5xl md:text-8xl mb-8 leading-tight tracking-tight">Expertly Navigating The Seattle Market</h1>
-            <p class="text-lg md:text-xl mb-12 font-light opacity-90 max-w-2xl mx-auto leading-relaxed">Personalized strategies for high-value property transitions and exclusive off-market access.</p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="#listings" class="bg-white text-slate-900 px-10 py-4 font-bold rounded-sm hover:bg-slate-100 transition shadow-2xl uppercase text-[11px] tracking-widest">Explore Properties</a>
-                <a href="#contact" class="bg-transparent border border-white/50 px-10 py-4 font-bold rounded-sm hover:bg-white hover:text-slate-900 transition uppercase text-[11px] tracking-widest">Home Valuation</a>
+    <!-- HERO (HIGH-END AGENCY FEEL) -->
+    <header class="hero-section h-[90vh] flex items-center justify-center text-white text-center px-6">
+        <div class="max-w-5xl">
+            <h1 class="text-6xl md:text-8xl mb-8 leading-tight tracking-tight">Exceptional Seattle <br><span class="italic font-light">Real Estate.</span></h1>
+            <p class="text-xl md:text-2xl mb-12 font-light opacity-90 max-w-2xl mx-auto leading-relaxed border-l-2 border-emerald-500 pl-6">
+                Redefining the standard of luxury property transitions through data-driven strategy and exclusive off-market access.
+            </p>
+            <div class="flex flex-col md:flex-row gap-6 justify-center uppercase text-[11px] tracking-[0.3em] font-bold">
+                <a href="#listings" class="bg-white text-slate-900 px-12 py-5 rounded-sm hover:bg-slate-100 transition shadow-2xl">View Portfolio</a>
+                <a href="#contact" class="btn-outline text-white px-12 py-5 rounded-sm">Home Valuation</a>
             </div>
         </div>
     </header>
 
-    <!-- TRUST BAR (FIXED: NO BROKEN IMAGES) -->
-    <div class="bg-slate-50 py-10 border-b border-slate-100">
-        <div class="flex flex-wrap justify-center gap-12 text-slate-300 font-black text-xl italic px-6 tracking-tighter">
-            <span class="opacity-50 uppercase">Forbes</span>
-            <span class="opacity-50 uppercase">Zillow</span>
-            <span class="opacity-50 uppercase">WSJ</span>
-            <span class="opacity-50 uppercase">Mansion Global</span>
+    <!-- TRUST SECTION -->
+    <div class="bg-slate-900 py-12 border-b border-white/5">
+        <div class="flex flex-wrap justify-center gap-16 text-white/30 font-bold text-xl italic px-8 tracking-tighter uppercase">
+            <span>Forbes</span>
+            <span>Wall Street Journal</span>
+            <span>Mansion Global</span>
+            <span>Zillow Luxury</span>
         </div>
     </div>
 
-    <!-- LISTINGS (FIXED IMAGES) -->
-    <section id="listings" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-20">
-            <h2 class="text-4xl md:text-5xl mb-4">Seattle Curated Collection</h2>
-            <div class="w-12 h-1 bg-emerald-600 mx-auto mb-6"></div>
-            <p class="text-slate-400 max-w-xl mx-auto italic font-light">Exclusive Seattle properties currently held in private collection.</p>
+    <!-- LISTINGS (STABLE IMAGES) -->
+    <section id="listings" class="py-32 px-8 max-w-[1400px] mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+            <div class="max-w-2xl">
+                <h2 class="text-5xl md:text-6xl mb-6">The Seattle <br>Curated Collection</h2>
+                <p class="text-slate-500 italic text-lg">A selection of the most prestigious residences in the Pacific Northwest.</p>
+            </div>
+            <a href="#" class="text-[11px] font-bold uppercase tracking-[0.3em] border-b-2 border-emerald-500 pb-2">View All Inventory</a>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <!-- House 1 -->
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+            <!-- Item 1 -->
             <div class="group">
-                <div class="overflow-hidden mb-6 shadow-xl rounded-sm">
-                    <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=800&auto=format&fit=crop" class="w-full h-80 object-cover group-hover:scale-105 transition duration-700" alt="Seattle Home">
+                <div class="overflow-hidden mb-8 shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" class="w-full h-[500px] object-cover group-hover:scale-105 transition duration-1000" alt="Seattle Estate">
                 </div>
-                <h3 class="text-xl font-bold text-slate-900 tracking-tight">The Modern Waterfront</h3>
-                <p class="text-[10px] text-slate-400 uppercase tracking-[0.2em] mt-2 font-bold italic">Private Listing - $4.5M</p>
+                <h3 class="text-2xl mb-2">The Modern Waterfront</h3>
+                <p class="text-[10px] text-slate-400 uppercase tracking-[0.3em] font-bold">Private Listing | $4,500,000</p>
             </div>
-            <!-- House 2 -->
+            <!-- Item 2 -->
             <div class="group">
-                <div class="overflow-hidden mb-6 shadow-xl rounded-sm border border-slate-100">
-                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop" class="w-full h-80 object-cover group-hover:scale-105 transition duration-700" alt="Modern Estate">
+                <div class="overflow-hidden mb-8 shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=800&auto=format&fit=crop" class="w-full h-[500px] object-cover group-hover:scale-105 transition duration-1000" alt="Luxury Home">
                 </div>
-                <h3 class="text-xl font-bold text-slate-900 tracking-tight">Lake Union Estate</h3>
-                <p class="text-[10px] text-slate-400 uppercase tracking-[0.2em] mt-2 font-bold italic">Off-Market - $8.2M</p>
+                <h3 class="text-2xl mb-2">Lake Union Residence</h3>
+                <p class="text-[10px] text-slate-400 uppercase tracking-[0.3em] font-bold">Off-Market | $8,200,000</p>
             </div>
-            <!-- House 3 -->
+            <!-- Item 3 -->
             <div class="group">
-                <div class="overflow-hidden mb-6 shadow-xl rounded-sm border border-slate-100">
-                    <img src="https://images.unsplash.com/photo-1600607687940-47a0f9259d57?q=80&w=800&auto=format&fit=crop" class="w-full h-80 object-cover group-hover:scale-105 transition duration-700" alt="Penthouse">
+                <div class="overflow-hidden mb-8 shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop" class="w-full h-[500px] object-cover group-hover:scale-105 transition duration-1000" alt="Penthouse">
                 </div>
-                <h3 class="text-xl font-bold text-slate-900 tracking-tight">Capitol Hill Penthouse</h3>
-                <p class="text-[10px] text-slate-400 uppercase tracking-[0.2em] mt-2 font-bold italic">Luxury Collection - $2.1M+</p>
+                <h3 class="text-2xl mb-2">Capitol Hill Penthouse</h3>
+                <p class="text-[10px] text-slate-400 uppercase tracking-[0.3em] font-bold">Exclusive | $2,100,000+</p>
             </div>
         </div>
     </section>
 
-    <!-- LEAD FORM (CONVERSION FOCUSED) -->
-    <section id="contact" class="max-w-4xl mx-auto my-24 p-10 md:p-16 bg-white shadow-2xl rounded-sm border border-slate-100 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-1 bg-emerald-600"></div>
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl mb-3 leading-tight">Private Consultation</h2>
-            <p class="text-slate-400 text-[10px] uppercase tracking-[0.4em] font-bold">Contact Reena Directly: 206.859.9528</p>
-        </div>
-        
-        <form action="https://formspree.io/f/mgopnwog" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div class="flex flex-col">
-                <label class="text-[10px] uppercase tracking-widest text-slate-400 mb-2 font-bold">Name</label>
-                <input type="text" name="Client Name" placeholder="Full Name" class="border-b border-slate-200 py-3 focus:border-emerald-600 outline-none transition text-sm" required>
+    <!-- LEAD SECTION -->
+    <section id="contact" class="bg-slate-50 py-32 px-8">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div>
+                <h2 class="text-5xl md:text-6xl mb-8 leading-tight">Ready to start your <br><span class="italic font-light text-emerald-700">next chapter?</span></h2>
+                <p class="text-slate-500 mb-12 text-lg leading-relaxed">Whether you are looking for an off-market acquisition or a strategic sale, Reena provides the local expertise and global reach required for luxury real estate.</p>
+                <div class="space-y-4">
+                    <p class="font-bold uppercase text-xs tracking-widest text-slate-400 italic underline">Direct Inquiries</p>
+                    <a href="tel:2068599528" class="text-3xl font-bold hover:text-emerald-700 transition">206.859.9528</a>
+                </div>
             </div>
-            <div class="flex flex-col">
-                <label class="text-[10px] uppercase tracking-widest text-slate-400 mb-2 font-bold">Email Address</label>
-                <input type="email" name="Email Address" placeholder="email@domain.com" class="border-b border-slate-200 py-3 focus:border-emerald-600 outline-none transition text-sm" required>
-            </div>
-            <div class="flex flex-col md:col-span-2">
-                <label class="text-[10px] uppercase tracking-widest text-slate-400 mb-2 font-bold">Message / Inquiry</label>
-                <textarea name="Inquiry Details" placeholder="Tell Reena about your property goals..." class="border-b border-slate-200 py-3 focus:border-emerald-600 outline-none transition h-28 resize-none text-sm"></textarea>
-            </div>
-            <input type="hidden" name="_subject" value="URGENT: Reena Sells Homes Lead!">
-            <button type="submit" class="bg-slate-900 text-white p-5 rounded-sm font-bold md:col-span-2 hover:bg-emerald-700 transition uppercase text-xs tracking-[0.4em] mt-4 shadow-xl">
-                Send Message
-            </button>
-        </form>
-    </section>
-
-    <!-- MARKET REPORT -->
-    <section id="report" class="bg-slate-900 py-32 px-6 text-white text-center">
-        <div class="max-w-2xl mx-auto">
-            <span class="text-emerald-500 uppercase tracking-[0.5em] text-[10px] mb-6 block font-bold">Seattle Analytics</span>
-            <h2 class="text-4xl md:text-5xl mb-8 leading-tight italic">The 2024 Seattle Luxury Real Estate Report</h2>
-            <form action="https://formspree.io/f/mgopnwog" method="POST" class="flex flex-col md:flex-row gap-0 shadow-3xl max-w-lg mx-auto">
-                <input type="email" name="Report Subscriber Email" placeholder="Email Address" class="flex-1 p-5 text-slate-900 focus:outline-none text-sm" required>
-                <input type="hidden" name="Source" value="Market Report Subscription - Seattle">
-                <button type="submit" class="bg-emerald-600 text-white px-8 py-5 font-extrabold uppercase text-[10px] tracking-widest hover:bg-emerald-500 transition">
-                    Download
-                </button>
+            
+            <form action="https://formspree.io/f/mgopnwog" method="POST" class="bg-white p-12 shadow-2xl border border-slate-100">
+                <div class="grid grid-cols-1 gap-8">
+                    <input type="text" name="name" placeholder="Name" class="border-b border-slate-200 py-4 focus:border-emerald-600 outline-none text-sm transition" required>
+                    <input type="email" name="email" placeholder="Email" class="border-b border-slate-200 py-4 focus:border-emerald-600 outline-none text-sm transition" required>
+                    <textarea name="message" placeholder="Property Address or Inquiry" class="border-b border-slate-200 py-4 focus:border-emerald-600 outline-none text-sm h-32 resize-none transition"></textarea>
+                    <button type="submit" class="bg-slate-900 text-white py-5 font-bold uppercase text-[10px] tracking-[0.4em] hover:bg-emerald-700 transition shadow-xl mt-4">Submit Inquiry</button>
+                </div>
             </form>
-            <p class="text-[9px] mt-8 text-slate-500 uppercase tracking-[0.3em]">Confidentiality Guaranteed | 206.859.9528</p>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="py-20 text-center bg-white border-t border-slate-100">
-        <div class="flex justify-center mb-8 opacity-20">
-             <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 45L50 20L80 45V80H20V45Z" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
-            </svg>
+    <!-- FOOTER (REXMON STYLE - "FAT FOOTER") -->
+    <footer class="bg-slate-900 text-white pt-32 pb-12 px-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-32">
+            <!-- Branding -->
+            <div class="lg:col-span-1">
+                <span class="text-2xl font-bold tracking-tighter block mb-6 uppercase">Reena <span class="font-light italic text-slate-400">Sells Homes</span></span>
+                <p class="text-slate-500 text-sm leading-relaxed mb-8">Elevating Seattle luxury real estate through privacy, integrity, and unparalleled market expertise.</p>
+                <a href="tel:2068599528" class="text-lg font-bold border-b border-emerald-500 pb-1 hover:text-emerald-500 transition">206.859.9528</a>
+            </div>
+
+            <!-- Areas -->
+            <div>
+                <h4 class="font-bold uppercase text-[10px] tracking-[0.3em] mb-8 text-emerald-500">Areas We Serve</h4>
+                <ul class="space-y-4 text-sm font-medium">
+                    <li><a href="#" class="footer-link">Capitol Hill</a></li>
+                    <li><a href="#" class="footer-link">Bellevue</a></li>
+                    <li><a href="#" class="footer-link">Mercer Island</a></li>
+                    <li><a href="#" class="footer-link">Lake Union</a></li>
+                    <li><a href="#" class="footer-link">Queen Anne</a></li>
+                </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="font-bold uppercase text-[10px] tracking-[0.3em] mb-8 text-emerald-500">Quick Links</h4>
+                <ul class="space-y-4 text-sm font-medium">
+                    <li><a href="#listings" class="footer-link">Current Inventory</a></li>
+                    <li><a href="#contact" class="footer-link">Home Valuation</a></li>
+                    <li><a href="#report" class="footer-link">Market Insights</a></li>
+                    <li><a href="#" class="footer-link">Client Testimonials</a></li>
+                    <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter/Market Insights -->
+            <div id="report">
+                <h4 class="font-bold uppercase text-[10px] tracking-[0.3em] mb-8 text-emerald-500">Market Insights</h4>
+                <p class="text-slate-500 text-sm mb-6">Receive exclusive off-market alerts and Seattle data.</p>
+                <form action="https://formspree.io/f/mgopnwog" method="POST" class="flex">
+                    <input type="email" placeholder="Email Address" class="bg-white/5 border border-white/10 p-4 text-sm w-full focus:outline-none focus:border-emerald-600">
+                    <button type="submit" class="bg-white text-slate-900 px-6 font-bold uppercase text-[10px]">Join</button>
+                </form>
+            </div>
         </div>
-        <p class="text-slate-400 text-[10px] uppercase tracking-[0.3em] leading-loose">
-            &copy; 2024 Reena Sells Homes | Seattle, WA <br>
-            Equal Housing Opportunity | <a href="tel:2068599528" class="font-bold text-slate-900">206.859.9528</a>
-        </p>
+
+        <div class="max-w-7xl mx-auto pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+            <p class="text-slate-500 text-[10px] uppercase tracking-[0.3em]">© 2024 Reena Sells Homes | Seattle, Washington</p>
+            <div class="flex gap-8 text-[10px] uppercase tracking-[0.3em] font-bold">
+                <span class="text-slate-700">Equal Housing Opportunity</span>
+                <span class="text-slate-700">Broker Licensed in WA</span>
+            </div>
+        </div>
     </footer>
 
 </body>
